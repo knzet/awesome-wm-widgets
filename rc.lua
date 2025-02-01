@@ -27,11 +27,18 @@ local volume_control = require('awesome-wm-widgets.volume-widget.volume')
 --local spotify_widget = require("awesome-wm-widgets.spotify-widget.spotify")
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+--local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
 local run_shell = require("awesome-wm-widgets.run-shell.run-shell")
 local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
+--local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
+--local pomo_widget = require("awesome-wm-widgets.pomodoroarc-widget.pomodoroarc")
 
 local todo_widget = require("awesome-wm-widgets.todo-widget.todo")
 -- local fact_widget = require("facts.fact-widget.fact")
+
+
+--naughty.config.defaults.position = "top_middle"
+naughty.config.defaults.font = "Sans 15"
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -69,6 +76,7 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 beautiful.useless_gap = 1
 beautiful.gap_single_client = true
+beautiful.hotkeys_font = 'Sans 12' 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "editor"
@@ -252,7 +260,26 @@ awful.screen.connect_for_each_screen(function(s)
             todo_widget(),
             -- apt_widget(),
             cpu_widget(),
-            ram_widget(),
+	    --weather_widget({
+            --	api_key='fb307f8da2f155d80fc77538eb08e874',
+            --	coordinates = {45.5017, -73.5673},
+            --}),        
+	    --weather_widget({
+            --	api_key='fb307f8da2f155d80fc77538eb08e874',
+            --	coordinates = {39.9526, 75.1652},
+            --	time_format_12h = true,
+            --	units = 'imperial',
+            --	both_units_widget = true,
+        --    --	font_name = 'Carter One',
+            --	icons = 'VitalyGorbachev',
+	--	icon_pack_name='VitalyGorbachev',
+          --  	icons_extension = '.svg',
+            --	show_hourly_forecast = true,
+           --	show_daily_forecast = true,
+           --}),
+	    ram_widget(),
+	    --pomo_widget(),
+	    --fs_widget(),
             volume_control(),
 
             s.mylayoutbox

@@ -58,7 +58,7 @@ function widget.new()
             turnoff_notification = naughty.notify{
             icon = HOME .. "/.config/awesome/nichosi.png",
             icon_size=100,
-            title = "Huston, we have a problem",
+            title = "Houston, we have a problem",
             text = "You're about to turn off your computer",
             timeout = 5, hover_timeout = 0.5,
             position = "bottom_right",
@@ -84,15 +84,15 @@ function widget.new()
             {
                 {
                     {
-                        {
-                            {
-                                markup = '<span font="awesomewm-font 14" color="#ffffff">a</span>',
-                                widget = wibox.widget.textbox,
-                            },
-                            id = 'icon',
-                            left = 10,
-                            layout = wibox.container.margin
-                        },
+                        -- {
+                        --     {
+                        --         markup = '<span font="awesomewm-font 14" color="#ffffff">launch</span>',
+                        --         widget = wibox.widget.textbox,
+                        --     },
+                        --     id = 'icon',
+                        --     left = 10,
+                        --     layout = wibox.container.margin
+                        -- },
                         {
                             run_shell,
                             left = 10,

@@ -29,15 +29,15 @@ local function convert_to_h(bytes)
         dim = 'kb/s'
     elseif bits < 1000000000 then
         speed = bits/1000000
-        dim = 'Mb/s'
+        dim = 'mb/s'
     elseif bits < 1000000000000 then
         speed = bits/1000000000
-        dim = 'Gb/s'
+        dim = 'gb/s'
     else
         speed = tonumber(bits)
         dim = 'b/s'
     end
-    return math.floor(speed + 0.5) .. ' ' .. dim
+    return math.floor(speed + 0.5) .. dim
 end
 
 local function split(string_to_split, separator)
